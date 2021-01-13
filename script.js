@@ -15,7 +15,7 @@ if(window.location.hash) {
         beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'bearer ' + token);},
         success: function(data) {
             console.log(data);
-            displayInfos();
+            buildSetting();
         }
     });
 
@@ -39,6 +39,7 @@ function buildSetting(){
     beforeSend: function(xhrMessages){xhrMessages.setRequestHeader('Authorization', 'bearer ' + token);},
     success: function(dataMessages) {
         console.log("BUILD SETTING = " + dataMessages);
+        displayInfos();
     }
 })}
 
