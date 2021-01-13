@@ -38,7 +38,7 @@ function buildSetting(){
     type: "GET",
     beforeSend: function(xhrMessages){xhrMessages.setRequestHeader('Authorization', 'bearer ' + token);},
     success: function(dataMessages) {
-        console.log("BUILD SETTING = " + dataMessages);
+        console.log("BUILD SETTING = " + JSON.stringify(dataMessages));
         displayInfos();
     }
 })}
