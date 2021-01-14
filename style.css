@@ -1,3 +1,7 @@
 #header {
     display: flex;
 }
+
+#logo {
+    width: 40%;
+}
