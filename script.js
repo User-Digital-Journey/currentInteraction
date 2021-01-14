@@ -84,7 +84,13 @@ function buildSetting(){
             beforeSend: function(xhrMessages){xhrMessages.setRequestHeader('Authorization', 'bearer ' + token);},
             success: function(dataMessages) {
                 console.log("BUILD SETTING = " + JSON.stringify(dataMessages));
+                dataMessages = dataMessages.conversations;
+                console.log("BUILD SETTING CONVERSATION = " + JSON.stringify(dataMessages));
+
+            for (const [keySection, valueSection] of Object.entries(dataMessages)) {
+                var conversationId = valueSection.conversationId;
                 displayInfos(conversationId);
+            }
         }
     })
 })}
