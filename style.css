@@ -1,6 +1,6 @@
 #logo {
-    width: 40%;
-    height: 30%;
+    width: 30%;
+    height: 20%;
     margin-left: 2%;
     margin-top: 2%;
 }
@@ -11,7 +11,7 @@
 
 h1 {
     text-align: center;
-    font-size: 3rem;
+    font-size: 3rem !important;
 }
 
 #tablePrincipale {
