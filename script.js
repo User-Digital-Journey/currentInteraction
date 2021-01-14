@@ -129,7 +129,7 @@ function displayInfos(conversationId) {
 
             for (const [key, value] of infos.entries()) {
                 var newTr = document.createElement("tr");
-                tableBodyInfos.appendChild(newTr);
+                tableBody.appendChild(newTr);
                 var newCellKey = newTr.insertCell(-1);
                 newCellKey.innerHTML = key;
                 var newCellValue = newTr.insertCell(-1);
@@ -138,7 +138,7 @@ function displayInfos(conversationId) {
 
             for (const [key, value] of Object.entries(dataMessagesAttributes)) {
                 var newTr = document.createElement("tr");
-                tableBodyInfos.appendChild(newTr);
+                tableBody.appendChild(newTr);
                 var newCellKey = newTr.insertCell(-1);
                 newCellKey.innerHTML = key;
                 var newCellValue = newTr.insertCell(-1);
