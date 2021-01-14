@@ -1,11 +1,16 @@
 #logo {
     width: 40%;
     height: 30%;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+#header {
+    margin: 2%;
 }
 
 h1 {
     text-align: center;
-    margin: 2%;
 }
 
 #tablePrincipale {
