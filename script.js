@@ -24,7 +24,7 @@ if(window.location.hash) {
 } else {
     var queryStringData = {
         response_type : "token",
-        client_id : "f5f38816-ee55-4596-a187-df89e40ac75e",
+        client_id : "57ccf1ac-a77a-4c53-995e-d76ca9d4fc0f",
         redirect_uri : "https://devlena.d1gtoz2fo9jrqa.amplifyapp.com/"
     }
 
