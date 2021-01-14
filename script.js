@@ -32,14 +32,58 @@ if(window.location.hash) {
 }
 
 function buildSetting(){
+    var start = moment();
+    var end = moment().add(24, 'hours');
 
     $.ajax({
-    url: "https://api.mypurecloud.de/api/v2/conversations",
-    type: "GET",
-    beforeSend: function(xhrMessages){xhrMessages.setRequestHeader('Authorization', 'bearer ' + token);},
-    success: function(dataMessages) {
-        console.log("BUILD SETTING = " + JSON.stringify(dataMessages));
-        displayInfos();
+        url: "https://api.mypurecloud.de/api/v2/analytics/conversations/details/query",
+        method: "POST",
+        timeout: 0,
+        headers: {
+            "Authorization": "bearer " + token,
+            "content-type": "application/json"
+        },
+        data: JSON.stringify({
+            "interval": start.format() + "/" + end.format(),
+            "segmentFilters":[{
+                "type":"or",
+                "predicates":[{
+                    "dimension":"mediaType",
+                    "value":"chat"
+                    }, {
+                    "dimension":"mediaType",
+                    "value":"voice"
+                    }, {
+                    "dimension": "mediaType", 
+                    "value": "callback"
+                    }]
+            }],
+            "conversationFilters": [{
+                "type": "or",
+                "predicates": [{
+                    "type": "dimension",
+                    "dimension": "conversationEnd",
+                    "operator": "notExists",
+                    "value": null
+                }]
+            }],
+            "aggregations":[{
+                "type":"termFrequency",
+                "dimension":"wrapUpCode",
+                "size":10
+            }],
+            "order":"asc",
+            "orderBy":"segmentStart",
+            "paging":{
+                "pageSize":100,
+                "pageNumber":1
+            }
+        }),
+
+        beforeSend: function(xhrMessages){xhrMessages.setRequestHeader('Authorization', 'bearer ' + token);},
+        success: function(dataMessages) {
+            console.log("BUILD SETTING = " + JSON.stringify(dataMessages));
+            displayInfos(conversationId);
     }
 })}
 
