@@ -113,7 +113,7 @@ function displayInfos(conversationId) {
             var infos = new Map([
                 ['ID', dataMessages.id],
                 ['Start Time', dataMessages.startTime],
-                ['End Time', dataMessages.endTime],
+                //['End Time', dataMessages.endTime],
                 ['Connected Time', dataMessages.participants[0].connectedTime],
                 ['dnis', dataMessages.participants[0].dnis],
                 ['ani', dataMessages.participants[0].ani]
