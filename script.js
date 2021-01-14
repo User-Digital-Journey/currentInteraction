@@ -105,20 +105,20 @@ function displayInfos(conversationId) {
             console.log(dataMessages);
             var dataMessagesAttributes = dataMessages.participants[0].attributes;
 
+            var tableHead = document.getElementById("tableHead");
+
+            var newTrHead = document.createElement("tr");
+            tableHead.appendChild(newTrHead);
+
+            var newThHead1 = document.createElement("th");
+            newThHead1.innerHTML = "Attributes";
+            newTrHead.appendChild(newThHead1);
+
+            var newThHead2 = document.createElement("th");
+            newThHead2.innerHTML = "Values";
+            newTrHead.appendChild(newThHead2);
+
             var tableBody = document.getElementById("tableBody");
-
-            var newTrInfos = document.createElement("tr");
-            tableBody.appendChild(newTrInfos);
-
-            var newThInfos1 = document.createElement("th");
-            newThInfos1.setAttribute("class", "thead-dark");
-            newThInfos1.innerHTML = "Attributes";
-            newTrInfos.appendChild(newThInfos1);
-
-            var newThInfos2 = document.createElement("th");
-            newThInfos1.setAttribute("class", "thead-dark");
-            newThInfos2.innerHTML = "Values";
-            newTrInfos.appendChild(newThInfos2);
 
             var infos = new Map([
                 ['ID', dataMessages.id],
