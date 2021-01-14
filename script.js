@@ -25,7 +25,7 @@ if(window.location.hash) {
     var queryStringData = {
         response_type : "token",
         client_id : "57ccf1ac-a77a-4c53-995e-d76ca9d4fc0f",
-        redirect_uri : "https://devlena.d1gtoz2fo9jrqa.amplifyapp.com/"
+        redirect_uri : "https://dev.d1gtoz2fo9jrqa.amplifyapp.com/"
     }
 
     window.location.replace("https://login.mypurecloud.de/oauth/authorize?" + jQuery.param(queryStringData));
