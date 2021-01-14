@@ -1,7 +1,18 @@
 #header {
     display: flex;
+    align-items: center;
 }
 
 #logo {
     width: 40%;
+    height: 30%;
+}
+
+h1 {
+    text-align: center;
+    margin: 2%;
+}
+
+#tablePrincipale {
+    text-align: center;
 }
