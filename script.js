@@ -110,6 +110,16 @@ function displayInfos(conversationId) {
             var newTrInfos = document.createElement("tr");
             tableBody.appendChild(newTrInfos);
 
+            var newThInfos1 = document.createElement("th");
+            newThInfos1.setAttribute("class", "thead-dark");
+            newThInfos1.innerHTML = "Attributes";
+            newTrInfos.appendChild(newThInfos1);
+
+            var newThInfos2 = document.createElement("th");
+            newThInfos1.setAttribute("class", "thead-dark");
+            newThInfos2.innerHTML = "Values";
+            newTrInfos.appendChild(newThInfos2);
+
             var infos = new Map([
                 ['ID', dataMessages.id],
                 ['Start Time', dataMessages.startTime],
