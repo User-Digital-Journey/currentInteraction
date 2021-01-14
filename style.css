@@ -6,11 +6,12 @@
 }
 
 #header {
-    margin: 2%;
+    margin: 3% 2% 2% 2%;
 }
 
 h1 {
     text-align: center;
+    font-size: 3rem;
 }
 
 #tablePrincipale {
